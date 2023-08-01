@@ -4,6 +4,8 @@ FROM golang:1.20 AS builder
 # Install required dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends git
 
+RUN apt-get install -y libc6
+
 # Set the working directory
 WORKDIR /go/src/geth
 
@@ -14,8 +16,7 @@ RUN git clone https://github.com/ethereum/go-ethereum.git .
 # Build geth
 RUN make geth
 
-# Step 2: Create the final minimal container
-FROM debian:buster-slim
+FROM debian:stable-slim
 
 # Copy the built geth binary from the previous stage
 COPY --from=builder /go/src/geth/build/bin/geth /usr/local/bin/
