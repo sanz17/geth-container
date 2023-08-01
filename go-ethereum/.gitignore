@@ -41,6 +41,15 @@ light
 COPYING
 COPYING.LESSER
 AUTHORS
+appveyor.yml
+circle.yml
+interfaces.go
+Makefile
+oss-fuzz.sh
+SECURITY.md
+.golangci.yml
+.mailmap
+.travis.yml
 
 #*
 .#*
