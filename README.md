@@ -24,12 +24,15 @@ git clone https://github.com/sanz17/geth-container.git
 
 ```shell
 cd geth-container
+cd go-ethereum
 ```
-- Run using VsCode.
 
-```shell
-code .
+- Start building image
 ```
+docker build . -t go-toolchaingeth:latest
+```
+
+- Docker run
 
 - Docker pull
 ```
